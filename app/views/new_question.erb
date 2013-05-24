@@ -1,0 +1,14 @@
+<div class="create_question">
+  <form action="/survey/<%= @survey.id %>/new_question" method="post" id="new_question">
+    <input type="text" name="question" placeholder="New Question">
+    <br>
+    <input type="text" name="choice[1]" placeholder="First Choice">
+    <input type="text" name="choice[2]" placeholder="Second Choice">
+    <button type="submit">Next Question</button>
+  </form>
+
+  <ul>
+    <li><a id="new_choice" href="#">Add New Choice</a></li>
+    <li><a href="/user/<%= current_user.id %>">Finished</a></li>
+  </ul>
+</div>

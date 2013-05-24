@@ -1,0 +1,4 @@
+<% @surveys.each do |survey|%>
+ <p><a href="/survey/<%=survey.id%>"> <%= survey.title %> </a>   <%= survey.author.username %> </p>
+<% end %>
+

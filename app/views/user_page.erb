@@ -1,0 +1,19 @@
+<h1><%= current_user.username %>'s Page</h1>
+
+<h2>Survey's Created</h2>
+
+<ul>
+  <% current_user.surveys.each do |survey| %>
+    <li><a href="/survey/<%= survey.id %>/summary"><%= survey.title %></a></li>
+  <% end %>
+</ul>
+
+<h2>Survey's taken</h2>
+
+<ul>
+  <% Session.where(:user_id => current_user.id).each do |session| %>
+    <li><a href="/survey/<%= Survey.find(session.survey_id).id %>/summary"><%= Survey.find(session.survey_id).title %></a></li>
+  <% end %>
+</ul>
+
+
